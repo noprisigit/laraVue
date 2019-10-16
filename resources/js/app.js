@@ -8,15 +8,15 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-import vueRouter from 'vue-router'
-Vue.use(vueRouter)
+import VueRouter from 'vue-router'
+Vue.use(VueRouter)
 
 let routes = [
-    { path: '/dashboard', component: require('./components/Dashboard.vue') },
-    { path: '/profile', component: require('./components/Profile.vue') },
+    { path: '/dashboard', component: require('./components/Dashboard.vue').default },
+    { path: '/profile', component: require('./components/Profile.vue').default },
 ]
 
-const router = new vueRouter({
+const router = new VueRouter({
     routes
 })
 
@@ -31,7 +31,7 @@ const router = new vueRouter({
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
