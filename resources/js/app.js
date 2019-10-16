@@ -17,7 +17,9 @@ let routes = [
 ]
 
 const router = new VueRouter({
-    routes
+    mode: 'history',
+    routes,
+    linkActiveClass: 'active'
 })
 
 /**
